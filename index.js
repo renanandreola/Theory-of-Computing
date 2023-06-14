@@ -286,50 +286,114 @@ function generateGraphic() {
   
   const ctx = document.getElementById("chart").getContext("2d");
   const chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ["10^3", "10^6", "10^9"],
-      datasets: [
-        {
-          label: "Hanoi",
-          data: timeHanoi,
-          backgroundColor: "rgba(75, 192, 192, 0.6)",
-        },
-        {
-          label: "BubbleSort",
-          data: timeBubbleSort,
-          backgroundColor: "rgba(255, 99, 132, 0.6)",
-        },
-        {
-          label: "MergeSort",
-          data: timeMergeSort,
-          backgroundColor: "rgba(235, 52, 219, 0.6)",
-        },
-        {
-          label: "QuickSort",
-          data: timeQuickSort,
-          backgroundColor: "rgba(52, 70, 235, 0.6)",
-        },
-        {
-          label: "CountingSort",
-          data: timeCountingSort,
-          backgroundColor: "rgba(235, 220, 52, 0.6)",
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            stepSize: 0.5,
+  type: "line",
+  data: {
+    labels: ["10^3", "10^6", "10^9"],
+    datasets: [
+      {
+        label: "Hanoi",
+        data: [$('#timeHanoi1').text().split(' ')[3], $('#timeHanoi2').text().split(' ')[3], $('#timeHanoi3').text().split(' ')[3]],
+        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        borderColor: "rgba(75, 192, 192, 0.6)",
+        fill: false,
+        pointRadius: 0,
+      },
+      {
+        label: "BubbleSort",
+        data: [$('#timeBubbleSort1').text().split(' ')[3], $('#timeBubbleSort2').text().split(' ')[3], $('#timeBubbleSort3').text().split(' ')[3]],
+        backgroundColor: "rgba(255, 99, 132, 0.6)",
+        borderColor: "rgba(255, 99, 132, 0.6)",
+        fill: false,
+        pointRadius: 0,
+      },
+      {
+        label: "MergeSort",
+        data: [$('#timeMergeSort1').text().split(' ')[3], $('#timeMergeSort2').text().split(' ')[3], $('#timeMergeSort3').text().split(' ')[3]],
+        backgroundColor: "rgba(235, 52, 219, 0.6)",
+        borderColor: "rgba(235, 52, 219, 0.6)",
+        fill: false,
+        pointRadius: 0,
+      },
+      {
+        label: "QuickSort",
+        data: [$('#timeQuickSort1').text().split(' ')[3], $('#timeQuickSort2').text().split(' ')[3], $('#timeQuickSort3').text().split(' ')[3]],
+        backgroundColor: "rgba(52, 70, 235, 0.6)",
+        borderColor: "rgba(52, 70, 235, 0.6)",
+        fill: false,
+        pointRadius: 0,
+      },
+      {
+        label: "CountingSort",
+        data: [$('#timeCountingSort1').text().split(' ')[3], $('#timeCountingSort2').text().split(' ')[3], $('#timeCountingSort3').text().split(' ')[3]],
+        backgroundColor: "rgba(235, 220, 52, 0.6)",
+        borderColor: "rgba(235, 220, 52, 0.6)",
+        fill: false,
+        pointRadius: 0,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        type: "logarithmic",
+        ticks: {
+          callback: function (value, index, values) {
+            return value.toLocaleString();
           },
-          title: {
-            display: true,
-            text: "Tempo de Execução (ms)",
-          },
+        },
+        title: {
+          display: true,
+          text: "Tempo de Execução (ms)",
         },
       },
     },
-  });
+  },
+});
+  // const chart = new Chart(ctx, {
+  //   type: "bar",
+  //   data: {
+  //     labels: ["10^3", "10^6", "10^9"],
+  //     datasets: [
+  //       {
+  //         label: "Hanoi",
+  //         data: timeHanoi,
+  //         backgroundColor: "rgba(75, 192, 192, 0.6)",
+  //       },
+  //       {
+  //         label: "BubbleSort",
+  //         data: timeBubbleSort,
+  //         backgroundColor: "rgba(255, 99, 132, 0.6)",
+  //       },
+  //       {
+  //         label: "MergeSort",
+  //         data: timeMergeSort,
+  //         backgroundColor: "rgba(235, 52, 219, 0.6)",
+  //       },
+  //       {
+  //         label: "QuickSort",
+  //         data: timeQuickSort,
+  //         backgroundColor: "rgba(52, 70, 235, 0.6)",
+  //       },
+  //       {
+  //         label: "CountingSort",
+  //         data: timeCountingSort,
+  //         backgroundColor: "rgba(235, 220, 52, 0.6)",
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true,
+  //         ticks: {
+  //           stepSize: 0.5,
+  //         },
+  //         title: {
+  //           display: true,
+  //           text: "Tempo de Execução (ms)",
+  //         },
+  //       },
+  //     },
+  //   },
+  // });
 }
