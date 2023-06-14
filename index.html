@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>TDE Teoria da Computação</title>
+</head>
+<body>
+
+    <span><strong>RENAN MARCOS ANDREOLLA - 096477</strong> - TDE de Teoria da computação</span>
+
+    <br>
+    <hr>
+
+    <span>Obs: Os números de entrada foram reduzidos devdo a falta de máquina para tamanho processamento</span>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="hanoi">
+            <strong>Algoritmo de Hanoi</strong>
+            <br>
+            <!-- <button onclick="hanoi(1000)">Tempo de execução com entrada 10^3</button> -->
+            <button onclick="hanoi(5, 'first')">Tempo de execução com entrada 10^3</button>
+            <span id="timeHanoi1"></span>
+            <br>
+            <!-- <button onclick="hanoi(1000000)">Tempo de execução com entrada 10^6</button> -->
+            <button onclick="hanoi(10, 'second')">Tempo de execução com entrada 10^6</button>
+            <span id="timeHanoi2"></span>
+            <br>
+            <!-- <button onclick="hanoi(1000000000)">Tempo de execução com entrada 10^9</button> -->
+            <button onclick="hanoi(15, 'third')">Tempo de execução com entrada 10^9</button>
+            <span id="timeHanoi3"></span>
+            <br>
+            <br>
+        </div>
+    
+        <hr>
+    
+        <div class="BubbleSort">
+            <strong>Algoritmo BubbleSort</strong>
+            <br>
+            <!-- <button onclick="BubbleSort(1000)">Tempo de execução com entrada 10^3</button> -->
+            <button onclick="BubbleSort(10, 3, 'first')">Tempo de execução com entrada 10^3</button>
+            <span id="timeBubbleSort1"></span>
+            <br>
+            <!-- <button onclick="BubbleSort(1000000)">Tempo de execução com entrada 10^6</button> -->
+            <button onclick="BubbleSort(10, 4, 'second')">Tempo de execução com entrada 10^6</button>
+            <span id="timeBubbleSort2"></span>
+            <br>
+            <!-- <button onclick="BubbleSort(1000000000)">Tempo de execução com entrada 10^9</button> -->
+            <button onclick="BubbleSort(10, 5, 'third')">Tempo de execução com entrada 10^9</button>
+            <span id="timeBubbleSort3"></span>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="MergeSort">
+            <strong>Algoritmo MergeSort</strong>
+            <br>
+            <!-- <button onclick="MergeSortFn(1000)">Tempo de execução com entrada 10^3</button> -->
+            <button onclick="MergeSortFn(10, 3, 'first')">Tempo de execução com entrada 10^3</button>
+            <span id="timeMergeSort1"></span>
+            <br>
+            <!-- <button onclick="MergeSortFn(1000000)">Tempo de execução com entrada 10^6</button> -->
+            <button onclick="MergeSortFn(10, 4, 'second')">Tempo de execução com entrada 10^6</button>
+            <span id="timeMergeSort2"></span>
+            <br>
+            <!-- <button onclick="MergeSortFn(1000000000)">Tempo de execução com entrada 10^9</button> -->
+            <button onclick="MergeSortFn(10, 5, 'third')">Tempo de execução com entrada 10^9</button>
+            <span id="timeMergeSort3"></span>
+            <br>
+            <br>
+        </div>
+    
+        <hr>
+    
+        <div class="QuickSort">
+            <strong>Algoritmo QuickSort</strong>
+            <br>
+            <!-- <button onclick="QuickSortFn(1000)">Tempo de execução com entrada 10^3</button> -->
+            <button onclick="QuickSortFn(10, 3, 'first')">Tempo de execução com entrada 10^3</button>
+            <span id="timeQuickSort1"></span>
+            <br>
+            <!-- <button onclick="QuickSortFn(1000000)">Tempo de execução com entrada 10^6</button> -->
+            <button onclick="QuickSortFn(10, 4, 'second')">Tempo de execução com entrada 10^6</button>
+            <span id="timeQuickSort2"></span>
+            <br>
+            <!-- <button onclick="QuickSortFn(1000000000)">Tempo de execução com entrada 10^9</button> -->
+            <button onclick="QuickSortFn(10, 5, 'third')">Tempo de execução com entrada 10^9</button>
+            <span id="timeQuickSort3"></span>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="CountingSort">
+        <strong>Algoritmo CountingSort</strong>
+        <br>
+        <!-- <button onclick="CountingSortFn(1000)">Tempo de execução com entrada 10^3</button> -->
+        <button onclick="CountingSortFn(10, 3, 'first')">Tempo de execução com entrada 10^3</button>
+        <span id="timeCountingSort1"></span>
+        <br>
+        <!-- <button onclick="CountingSortFn(1000000)">Tempo de execução com entrada 10^6</button> -->
+        <button onclick="CountingSortFn(10, 4, 'second')">Tempo de execução com entrada 10^6</button>
+        <span id="timeCountingSort2"></span>
+        <br>
+        <!-- <button onclick="CountingSortFn(1000000000)">Tempo de execução com entrada 10^9</button> -->
+        <button onclick="CountingSortFn(10, 5, 'third')">Tempo de execução com entrada 10^9</button>
+        <span id="timeCountingSort3"></span>
+        <br>
+        <br>
+    </div>
+
+    <hr>
+
+    <div class="graphics">
+        <span><strong>Gráfico dos algoritmos</strong> - Execute após gerar todos os tempos dos algorítmos</span>
+        <br>
+        <button onclick="generateGraphic()">Gerar gráfico</button>
+        <canvas id="chart"></canvas>
+    </div>
+
+    
+</body>
+<script src="index.js"></script>
+</html>
